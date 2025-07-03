@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poultry Detect</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: 'Georgia', serif;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background-color: #111;
+      font-weight: bold;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 2rem;
+    }
+    form {
+      margin-top: 2rem;
+    }
+    input[type="file"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+    img {
+      margin-top: 1rem;
+      width: 300px;
+      border-radius: 10px;
+    }
+    .social-icons {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    .social-icons i {
+      color: white;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="social-icons">
+    <i class="fab fa-x-twitter"></i>
+    <i class="fab fa-facebook"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-linkedin"></i>
+  </div>
+
+  <h1>Poultry Detect</h1>
+  <nav>
+    <a href="/">HOME</a>
+    <a href="#">PREDICTION_PAGE</a>
+  </nav>
+
+  <h1>Prediction</h1>
+  <h2>Image Classification</h2>
+
+  <form action="/predict" method="POST" enctype="multipart/form-data">
+    <p>Upload Your Image:</p>
+    <input type="file" name="file">
+    <br>
+    <button type="submit">predict</button>
+  </form>
+
+  {% if label %}
+    <h2>Hence , The infection type detected as {{ label }}</h2>
+    <img src="{{ url_for('display', filename=filename) }}" alt="Uploaded Image">
+  {% endif %}
+</body>
+</html>
