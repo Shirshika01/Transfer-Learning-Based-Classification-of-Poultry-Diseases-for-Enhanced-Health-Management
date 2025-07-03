@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PoultryDetect</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: #111;
+      padding: 1rem;
+      font-weight: bold;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    .title {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+    .subtitle {
+      font-size: 1.3rem;
+      margin: 1rem auto;
+      max-width: 800px;
+    }
+    .btn {
+      margin: 1rem auto;
+      padding: 0.75rem 2rem;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .gallery img {
+      border-radius: 10px;
+      width: 250px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .social-icons {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    .social-icons i {
+      color: white;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="social-icons">
+    <i class="fab fa-x-twitter"></i>
+    <i class="fab fa-facebook"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-linkedin"></i>
+  </div>
+  <h1><left>PoultryDetect</left></h1>
+  <nav>
+    <a href="#">HOME</a>
+    <a href="#">ABOUT</a>
+    <a href="#">CONTACT</a>
+  </nav>
+
+  <div class="title">Welcome to Poultry Health Hub,</div>
+  <div class="subtitle">your comprehensive resource for poultry disease management and prevention.</div>
+  <a href="{{ url_for('prediction_page') }}"><button class="btn">GET STARTED</button></a>
+
+
+  <div class="gallery">
+    <img src="static/assets/cocci.jpg" alt="Coccidiosis">
+    <img src="static/assets/sickchick.jpg" alt="Sick Chicken">
+    <img src="static/assets/disease.jpg" alt="Bird Disease">
+    <img src="static/assets/happy_chickens.jpg" alt="Healthy Poultry">
+  </div>
+</body>
+</html>
